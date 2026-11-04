@@ -1,6 +1,6 @@
 #profile-title: Happ ALL-IN-ONE (100)
 #profile-update-interval: 6
-# Generated: 2026-11-04 03:04 UTC
+# Generated: 2026-11-04 03:06 UTC
 # Public unknown nodes. Reachability and owner trust NOT verified.
 hysteria2://0zy7kb86chk9ktbn@dlwww.mymuic.ir:19883?obfs=salamander&obfs-password=otwmdcyqh98idcxv&sni=dlwww.mymuic.ir#AI-001-imnocrew
 hy2://96ab5cd282733fd4c312a61f972f330a@vp3.yysyy.online:443?sni=vp3.yysyy.online#AI-002-au1rxx
