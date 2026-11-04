@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-04 03:06 UTC",
+  "generated_utc": "2026-11-04 03:15 UTC",
   "nodes": 100,
   "sources": {
     "imnocrew": {
@@ -24,17 +24,30 @@
     }
   },
   "by_source": {
-    "imnocrew": 36,
-    "au1rxx": 21,
+    "imnocrew": 53,
+    "au1rxx": 114,
     "mini": 8,
-    "collector": 23,
-    "radar": 12
+    "collector": 35,
+    "radar": 30
   },
   "by_protocol": {
-    "hysteria2": 9,
-    "hy2": 4,
-    "trojan": 13,
-    "vless": 74
+    "hysteria2": 24,
+    "hy2": 9,
+    "trojan": 49,
+    "vless": 158
   },
-  "notice": "Static filtering only: not tested from Russia or audited for privacy."
+  "notice": "Static filtering only: not tested from Russia or audited for privacy.",
+  "proxy_probe": {
+    "checked_at_utc": "2026-11-04 03:15 UTC",
+    "tested": 240,
+    "passed": 100,
+    "failed": 140,
+    "failures_by_reason": {
+      "unsupported": 7,
+      "proxy_http_failed": 77
+    },
+    "median_pass_latency_ms": 505,
+    "network": "GitHub Actions hosted runner, NOT the user's home/mobile network",
+    "description": "HTTPS requests sent through a sing-box local HTTP proxy using each remote node"
+  }
 }
