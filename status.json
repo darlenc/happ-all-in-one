@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-04 03:15 UTC",
+  "generated_utc": "2026-11-04 03:16 UTC",
   "nodes": 100,
   "sources": {
     "imnocrew": {
@@ -38,15 +38,22 @@
   },
   "notice": "Static filtering only: not tested from Russia or audited for privacy.",
   "proxy_probe": {
-    "checked_at_utc": "2026-11-04 03:15 UTC",
+    "checked_at_utc": "2026-11-04 03:17 UTC",
     "tested": 240,
-    "passed": 100,
-    "failed": 140,
+    "passed": 156,
+    "published": 100,
+    "failed": 84,
     "failures_by_reason": {
       "unsupported": 7,
       "proxy_http_failed": 77
     },
-    "median_pass_latency_ms": 505,
+    "published_by_protocol": {
+      "trojan": 32,
+      "vless": 48,
+      "hysteria2": 17,
+      "hy2": 3
+    },
+    "median_pass_latency_ms": 582,
     "network": "GitHub Actions hosted runner, NOT the user's home/mobile network",
     "description": "HTTPS requests sent through a sing-box local HTTP proxy using each remote node"
   }
