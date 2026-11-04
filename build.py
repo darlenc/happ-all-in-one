@@ -34,7 +34,7 @@ def subscription_lines(data: str) -> list[str]:
     if not any(PREFIX.match(s) for s in lines):
         try:
             raw = "".join(x for x in lines if not x.startswith("#"))
-            raw = re.sub(r"\\s+", "", raw).replace("-", "+").replace("_", "/")
+            raw = re.sub(r"\s+", "", raw).replace("-", "+").replace("_", "/")
             data = base64.b64decode(raw + "=" * (-len(raw) % 4)).decode("utf-8")
             lines = [s.strip() for s in data.splitlines()]
         except (ValueError, UnicodeError):
