@@ -52,5 +52,6 @@ jobs:
           git add happ-all.txt status.json
           if ! git diff --cached --quiet; then
             git commit -m "Refresh HTTPS-tested Happ nodes [skip ci]"
+            git pull --rebase origin main
             git push
           fi
