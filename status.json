@@ -1,0 +1,40 @@
+{
+  "generated_utc": "2026-11-04 03:04 UTC",
+  "nodes": 100,
+  "sources": {
+    "imnocrew": {
+      "raw": 93,
+      "format_accepted": 65
+    },
+    "au1rxx": {
+      "raw": 1407,
+      "format_accepted": 1016
+    },
+    "mini": {
+      "raw": 96,
+      "format_accepted": 34
+    },
+    "collector": {
+      "raw": 62,
+      "format_accepted": 60
+    },
+    "radar": {
+      "raw": 240,
+      "format_accepted": 104
+    }
+  },
+  "by_source": {
+    "imnocrew": 36,
+    "au1rxx": 21,
+    "mini": 8,
+    "collector": 23,
+    "radar": 12
+  },
+  "by_protocol": {
+    "hysteria2": 9,
+    "hy2": 4,
+    "trojan": 13,
+    "vless": 74
+  },
+  "notice": "Static filtering only: not tested from Russia or audited for privacy."
+}
