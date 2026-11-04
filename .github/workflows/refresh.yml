@@ -1,0 +1,42 @@
+name: Refresh Happ VPN pool
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "build.py"
+      - ".github/workflows/refresh.yml"
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: happ-pool-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check script syntax
+        run: python -m py_compile build.py
+      - name: Build subscription from public sources
+        run: python build.py --limit 100 --out happ-all.txt
+      - name: Publish subscription and status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add happ-all.txt status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh Happ subscription [skip ci]"
+            git push
+          fi
