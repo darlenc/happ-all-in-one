@@ -217,7 +217,8 @@ def main():
             if i % 40 == 0 or i == len(lines):
                 print(f"Probed {i}/{len(lines)}: {len(results)} working, reasons={dict(reasons)}", flush=True)
 
-    # Do not fabricate 100 "healthy" nodes: publish however many actually passed.
+    # Keep full statistics before trimming to the published limit.
+    total_passed = len(results)
     results.sort(key=lambda entry: entry[0])
     results = results[:args.limit]
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -237,8 +238,11 @@ def main():
     status = json.loads(status_path.read_text(encoding="utf-8")) if status_path.exists() else {}
     status["proxy_probe"] = {
         "checked_at_utc": timestamp, "tested": len(lines),
-        "passed": len(results), "failed": len(lines) - len(results),
+        "passed": total_passed, "published": len(results),
+        "failed": len(lines) - total_passed,
         "failures_by_reason": dict(reasons),
+        "published_by_protocol": dict(Counter(
+            urlsplit(line).scheme for _, line in results)),
         "median_pass_latency_ms": round(statistics.median(p[0] for p in results)) if results else None,
         "network": "GitHub Actions hosted runner, NOT the user's home/mobile network",
         "description": "HTTPS requests sent through a sing-box local HTTP proxy using each remote node",
