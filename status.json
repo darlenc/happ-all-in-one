@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-11-25 08:28 UTC",
-  "nodes": 76,
+  "generated_utc": "2026-11-25 21:39 UTC",
+  "nodes": 84,
   "sources": {
     "imnocrew": {
       "raw": 0,
@@ -15,43 +15,43 @@
       "format_accepted": 85
     },
     "collector": {
-      "raw": 72,
-      "format_accepted": 71
+      "raw": 93,
+      "format_accepted": 91
     },
     "radar": {
-      "raw": 165,
-      "format_accepted": 47
+      "raw": 169,
+      "format_accepted": 48
     }
   },
   "by_source": {
-    "au1rxx": 89,
+    "au1rxx": 68,
     "mini": 75,
-    "collector": 60,
-    "radar": 16
+    "collector": 80,
+    "radar": 17
   },
   "by_protocol": {
-    "hy2": 7,
-    "vless": 200,
-    "hysteria2": 1,
-    "trojan": 32
+    "hy2": 5,
+    "vless": 208,
+    "hysteria2": 2,
+    "trojan": 25
   },
   "notice": "Static filtering only: not tested from Russia or audited for privacy.",
   "proxy_probe": {
-    "checked_at_utc": "2026-11-25 08:30 UTC",
+    "checked_at_utc": "2026-11-25 21:40 UTC",
     "tested": 240,
-    "passed": 76,
-    "published": 76,
-    "failed": 164,
+    "passed": 84,
+    "published": 84,
+    "failed": 156,
     "failures_by_reason": {
-      "proxy_http_failed": 162,
+      "proxy_http_failed": 154,
       "unsupported": 2
     },
     "published_by_protocol": {
-      "trojan": 15,
-      "vless": 60,
-      "hysteria2": 1
+      "vless": 66,
+      "trojan": 16,
+      "hysteria2": 2
     },
-    "median_pass_latency_ms": 757,
+    "median_pass_latency_ms": 824,
     "network": "GitHub Actions hosted runner, NOT the user's home/mobile network",
     "description": "HTTPS requests sent through a sing-box local HTTP proxy using each remote node"
   }
